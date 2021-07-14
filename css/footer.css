@@ -1,0 +1,148 @@
+/* FOOTER */
+
+footer {
+    width: 100%;
+    background: #202020;
+    color: white;
+    font-family: CaviarDreams;
+  }
+  
+  .container-footer-all {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 10px;
+  }
+  
+  .container-body {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .part1 {
+    max-width: 400px;
+  }
+  
+  .part1 h1 {
+    font-size: 22px;
+  }
+  
+  .part1 p {
+    font-size: 14px;
+    color: #c7c7c7;
+    margin-top: 20px;
+  }
+  
+  .part1 span {
+    color: white;
+    transition: ease-in-out 0.3s;
+  }
+  
+  .part1 span:hover {
+    color: red;
+    transition: ease-in-out 0.3s;
+  }
+  
+  .part2 {
+    max-width: 400px;
+  }
+  
+  .part2 h1 {
+    font-size: 22px;
+  }
+  
+  .row {
+    margin-top: 20px;
+    display: flex;
+  }
+  
+  .row img {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .row label {
+    margin-top: 10px;
+    margin-left: 20px;
+    color: #c7c7c7;
+    transition: ease-in-out 0.3s;
+    cursor: pointer;
+  }
+  
+  .row label:hover {
+    color: grey;
+    transition: ease-in-out 0.3s;
+  }
+  
+  .part3 {
+    max-width: 400px;
+  }
+  
+  .part3 h1 {
+    font-size: 22px;
+  }
+  
+  .row2 {
+    margin-top: 20px;
+    display: flex;
+  }
+  
+  .row2 img {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .row2 label {
+    margin-top: 10px;
+    margin-left: 20px;
+    max-width: 140px;
+    transition: ease-in-out 0.3s;
+  }
+  
+  .row2 label:hover {
+    color: grey;
+    transition: ease-in-out 0.3s;
+  }
+  
+  .container-footer1 {
+    background: #191919;
+    border-bottom: 1px dotted #484848;
+  }
+  
+  .container-footer1 a {
+    text-decoration: none;
+    color: red;
+  }
+  
+  .container-footer1 img {
+    width: 300px;
+    margin: 10px;
+  }
+  
+  .container-footer2 {
+    width: 100%;
+    background: #101010;
+  }
+  
+  .footer {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+  }
+  
+  .copyright {
+    color: #c7c7c7;
+  }
+  
+  .copyright a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+  }
+  
+  .information a {
+    text-decoration: none;
+    color: #c7c7c7;
+  }

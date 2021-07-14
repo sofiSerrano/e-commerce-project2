@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link type="text/css" rel="stylesheet" href="../css/styles.css">
+    <meta type="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+    <link rel="shortcut icon" href="../img/favicon.ico" />
+    <script type="text/javascript" src="../js/forms.js"></script>
+    <script type="text/javascript" src="../js/carousel.js"></script>
+    <script type="text/javascript" src="../js/addCat.js"></script>
+
+    <meta charset="UTF-8">
+    <title>FG. APPAREL | Home</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div id="header">
+            <div id="logo">
+                <h1><a href="index.html">FG APPAREL</a></h1>
+            </div>
+            <div id="separate-header-items">
+                <div id="searchbar">
+                    <input class="input_box" type="text" name="" placeholder="Buscar">
+                    <a class="glass" href="#">
+                        <i class="fas fa-search"></i>
+                    </a>
+                </div>
+                <div id="s-lg-buy">
+                    <button onclick="document.getElementById('login-box').style.display='block', document.getElementById('register-box').style.display='none', document.getElementById('add-clothes-div').style.display='none'" style="width:auto;">Entrar</button>
+                </div>
+                <div id="shop-bag">
+                    <a class="bag" href="#">
+                        <i class="fas fa-shopping-bag"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div id="login-box">
+            <form name="login" action="">
+                <h1>Entrar a su cuenta</h1>
+                <span onclick="document.getElementById('login-box').style.display='none'" class="close-btn" title="Cerrar">&times;</span>
+                <div class="form-input">
+                    <div class="form-icnlabel">
+                        <img class="form-icon" src="../img/icons/user.svg">
+                        <label>Ingrese email</label>
+                    </div>
+                    <input type="text" id="email-login" pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$' onkeyup="validateEmail(document.getElementById('email-login'))" placeholder="Email" name="email" value="" title="Debe ingresar un email valido." required>
+                    <span class="is-valid"></span>
+                </div>
+                <div class="form-input">
+                    <div class="form-icnlabel">
+                        <img class="form-icon" src="../img/icons/password.svg">
+                        <label>Ingrese contraseña</label>
+                    </div>
+                    <input type="password" id="pass-login" pattern="^(?=.*[\d])(?=.*[A-Z])(?=.*[a-z])(?=.*[!@#$%^&*])[\w!@#$%^&*]{8,}$" onkeyup="validatePass(document.getElementById('pass-login'))" placeholder="Contraseña" name="password" value="" title="Debe contener minimo 8 caracteres, un caracter especial, letras y numeros"
+                        required>
+                    <span class="is-valid"></span>
+                </div>
+                <input class="btn" type="submit" name="" value="Entrar">
+                <a class="pswrd-frgt" href="#">Olvidé la contraseña</a>
+                <a onclick="document.getElementById('login-box').style.display='none', document.getElementById('register-box').style.display='block', clearForm()">Crear una cuenta</a>
+            </form>
+        </div>
+
+        <div id="register-box">
+            <form name="register" action="">
+                <h1>Crear una cuenta</h1>
+                <span onclick="document.getElementById('register-box').style.display='none'" class="close-btn" title="Cerrar">&times;</span>
+                <div class="form-input">
+                    <div class="form-icnlabel">
+                        <img class="form-icon" src="../img/icons/user.svg">
+                        <label>Ingrese email</label>
+                    </div>
+                    <input type="text" id="email-register" pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$' onkeyup="validateEmail(document.getElementById('email-register'))" placeholder="Email" name="email" value="" title="Debe ingresar un email valido." required>
+                    <span class="is-valid"></span>
+                </div>
+                <div class="form-input">
+                    <div class="form-icnlabel">
+                        <img class="form-icon" src="../img/icons/name.svg">
+                        <label>Ingrese Nombre</label>
+                    </div>
+                    <input type="text" id="name-register" placeholder="Nombre" onkeyup="validateName(document.getElementById('name-register'))" name="name" value="" title="Debe ingresar un nombre." required>
+                    <span class="is-valid"></span>
+                </div>
+                <div class="form-input">
+                    <div class="form-icnlabel">
+                        <img class="form-icon" src="../img/icons/password.svg">
+                        <label>Ingrese contraseña</label>
+                    </div>
+                    <input type="password" id="pass-register" pattern="^(?=.*[\d])(?=.*[A-Z])(?=.*[a-z])(?=.*[!@#$%^&*])[\w!@#$%^&*]{8,}$" onkeyup="validatePass(document.getElementById('pass-register'))" placeholder="Contraseña" name="password" value="" title="Debe contener minimo 8 caracteres, un caracter especial, letras y numeros"
+                        required>
+                    <span class="is-valid"></span>
+                </div>
+                <div class="form-input">
+                    <div class="form-icnlabel">
+                        <img class="form-icon" src="../img/icons/password.svg">
+                        <label>Repita contraseña</label>
+                    </div>
+                    <input type="password" id="pass-register-repeat" onkeyup="passMatch()" placeholder="Repetir contraseña" name="passwordrepeat" value="" title="Las contraseñas deben coincidir" required>
+                    <span class="is-valid"></span>
+                </div>
+                <input class="btn" id="submit" type="submit" name="" value="Registrarse" disabled>
+                <a onclick="document.getElementById('register-box').style.display='none', document.getElementById('login-box').style.display='block', clearForm()"> Ya tengo una cuenta </a>
+            </form>
+        </div>
+
+        <div id="navegation-bar">
+            <ul>
+                <li class="dropdown">
+                    <a class="dropbtn">Hombre</a>
+                    <div class="dropdown-content">
+                        <a onclick="changeSubCat('Bermudas Hombre')">Bermudas</a>
+                        <a onclick="changeSubCat('Chaquetas Hombre')">Chaquetas</a>
+                        <a onclick="changeSubCat('Remeras Hombre')">Remeras</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a class="dropbtn">Niños</a>
+                    <div class="dropdown-content">
+                        <a onclick="changeSubCat('Camperas Niños')">Camperas</a>
+                        <a onclick="changeSubCat('Faldas Niñas')">Faldas</a>
+                        <a onclick="changeSubCat('Pijamas Niños')">Pijamas</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a class="dropbtn">Mujer</a>
+                    <div class="dropdown-content">
+                        <a onclick="changeSubCat('Abrigos Mujer')">Abrigos</a>
+                        <a onclick="changeSubCat('Faldas Mujer')">Faldas</a>
+                        <a onclick="changeSubCat('Remeras Mujer')">Remeras</a>
+                        <a onclick="changeSubCat('Vestidos Mujer')">Vestidos</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div id="slideshow-container">
+            <div class="mySlides fade">
+                <div class="numbertext">1 / 4</div>
+                <img src="../img/princ-img.png" style="width:100%">
+                <div class="text">
+                    <span>from italy</span>
+                    <br>
+                    <span>to the</span>
+                    <br>
+                    <span>world</span>
+                </div>
+            </div>
+            <div class="mySlides fade">
+                <div class="numbertext">2 / 4</div>
+                <img src="../img/img-men.jpg" style="width:100%">
+                <div class="text">
+                    <span>elegant</span>
+                    <br>
+                    <span>as men</span>
+                    <br>
+                    <span>should</span>
+                </div>
+            </div>
+            <div class="mySlides fade">
+                <div class="numbertext">3 / 4</div>
+                <img src="../img/img-women.jpg" style="width:100%">
+                <div class="text">
+                    <span>feel</span>
+                    <br>
+                    <span>glamorous</span>
+                </div>
+            </div>
+
+            <div class="mySlides fade">
+                <div class="numbertext">4 / 4</div>
+                <img src="../img/img-kids.jpg" style="width:100%">
+                <div class="text">
+                    <span>made for</span>
+                    <br>
+                    <span>all ages</span>
+                </div>
+            </div>
+
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+        <script>
+            carousel()
+        </script>
+
+        <div id="clothes-container" style="display: none;">
+            <button id="add-clothes-btn" onclick="document.getElementById('add-clothes-div').style.display='block'">Agregar ropa</button>
+            <div id="add-clothes-div">
+                <span onclick="document.getElementById('add-clothes-div').style.display='none'" class="close" title="Cerrar">&times;</span>
+                <div class="form-upload">
+                    <label>Nombre de la prenda</label>
+                    <input type="text" class="input-style" id="clothe-name" title="Ingrese nombre." required>
+                </div>
+
+                <div class="form-upload">
+                    <label>Ingrese precio ($)</label>
+                    <input type="text" class="input-style" pattern="^[0-9]+$" id="clothe-price" onkeyup="validatePrice(document.getElementById('clothe-price'))" onkeyup="" title="Ingrese precio." required>
+                    <span class="is-valid"></span>
+                </div>
+
+                <div class="form-upload">
+                    <label>Ingrese color</label>
+                    <input type="text" class="input-style" id="clothe-color" title="Ingrese color.">
+                </div>
+                <div class="form-upload" style="width: 90%;">
+                    <label>Ingrese nombre archivo de imagen</label>
+                    <input type="text" class="input-style" id="clothe-img" title="Ingrese imagen." required>
+                    <span id="example">Ej: remeragris1.jpg</span>
+                </div>
+                <input onclick="addElement(),clearClothesForm()" id="clothes-done" value="Agregar prenda" disabled></input>
+            </div>
+            <div id="sub-category">
+                <div id="t-shirt-text">
+                    <p id="catText">Remeras de hombre</p>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <div class="container-footer-all">
+                <div class="container-body">
+                    <div class="part1">
+                        <h1>Sobre nosotros</h1>
+                        <p>Influyente, innovador y progresivo, FG. Apparel está reinventando un enfoque totalmente moderno de la moda. Bajo la nueva visión de los directores creativos <span>Sofía Serrano</span> y <span>Angela Cáceres</span>, la Casa ha redefinido
+                            el lujo para el siglo XXI, reforzando aún más su posición como una de las casas de moda más deseables del mundo. Ecléctico, contemporáneo, romántico: nuestros representan el pináculo de la artesanía italiana y son insuperables
+                            por su calidad y atención al detalle.
+                        </p>
+                    </div>
+                    <div class="part2">
+                        <h1>Redes Sociales</h1>
+                        <div class="row">
+                            <a href="#" target="_blank"><img src="../img/icons/facebook.png"></a>
+                            <label>Siguenos en Facebook</label>
+                        </div>
+                        <div class="row">
+                            <a href="#" target="_blank"><img src="../img/icons/twitter.png"></a>
+                            <label>Siguenos en Twitter</label>
+                        </div>
+                        <div class="row">
+                            <a href="#" target="_blank"><img src="../img/icons/instagram.png"></a>
+                            <label>Siguenos en Instagram</label>
+                        </div>
+                    </div>
+                    <div class="part3">
+                        <h1>Informacion</h1>
+                        <div class="row2">
+                            <img src="../img/icons/house.png">
+                            <label>The Mall, Via Europa, 15/17, 
+									 50066 Leccio FI, Italy</label>
+                        </div>
+
+                        <div class="row2">
+                            <img src="../img/icons/smartphone.png">
+                            <label>+39-123-456-7</label>
+                        </div>
+
+                        <div class="row2">
+                            <img src="../img/icons/contact.png">
+                            <label>hello@fgapparel.com</label>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="container-footer2">
+                <div class="footer">
+                    <div class="copyright">
+                        © 2020 Todos los Derechos Reservados | <a href="index.html">FG. Apparel</a>
+                    </div>
+
+                    <div class="information">
+                        <a href="#">Informacion Marca</a> | <a href="#">Politica de privacidad</a> | <a href="">Terminos y Condiciones</a>
+                    </div>
+                </div>
+            </div>
+
+        </footer>
+    </div>
+</body>
+
+</html>

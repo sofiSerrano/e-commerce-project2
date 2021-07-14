@@ -1,0 +1,70 @@
+ejer1
+SELECT * from Pais
+
+ejer2 
+select * from provincia limit 5;
+
+ejer3
+select nombre,idpais from limit 5;
+
+ejer4
+select * from provincia where idpais = 2;
+
+ejer4
+select * from provincia where nombre like '%Jua%';
+
+ejer5
+select * from provincia where id in (5,6,7,8);
+
+
+sinejer (igual al 5):
+select * from provincia where id=5 or id=6 or id=7 or id=8;
+
+
+ejer6
+select * from provimcia where id in (1,2,3,4);
+
+ejer7
+select * from pais
+INNER JOIN provincia ON pais.id = provincia.idpais
+where pais.nombre like '%Argentina%';
+ 
+ejer8
+select pais.nombre as Pais, provincia.nombre as Provincia from pais
+INNER JOIN provincia ON pais.id = provincia.idpais
+where pais.nombre like '%Argentina%'
+
+
+ejer8
+SELECT p.nombre Pais, pr.nombre Provincia, d.nombre Departamento, s.valor Superficie FROM pais p inner join provincia pr on p.id= pr.idpais inner join departamento d on pr.id= d.idprovincia inner join superficie s on d.id= s.idDepartamento LIMIT 20 
+
+ejer9
+select pais.nombre, provincia.nombre, departamento.nombre from pais
+INNER JOIN provincia ON pais.id = provincia.idpais
+INNER JOIN departamento ON provincia.id = departamento.idprovincia
+where provincia.nombre like '%bue%'
+limit 20;
+
+
+ejer10
+select pais.nombre as Pais, provincia.nombre as Provincia, sum(poblacion.valor) poblacion, anio.numero as Año from pais
+INNER JOIN provincia ON provincia.idpais = pais.id
+INNER JOIN departamento ON departamento.idprovincia = provincia.id
+
+
+ejer10
+SELECT p.nombre Pais, pr.nombre Provincia, sum(po.valor) poblacion, a.numero Anio FROM pais p inner join provincia pr on p.id= pr.idpais inner join departamento d on pr.id= d.idprovincia inner join poblacion po on d.id= po.idDepartamento inner join anio a on po.idAnio= a.id group by p.nombre , pr.nombre, a.numero #LIMIT 20 
+
+ejer11
+SELECT p.nombre Pais,pr.nombre Provincia,  sum(po.valor) Poblacion , a.numero Anio
+FROM pais p INNER JOIN provincia pr ON p.id=pr.idPais INNER JOIN 
+departamento d ON pr.id=d.idProvincia INNER JOIN poblacion po ON d.id=po.idDepartamento
+INNER JOIN anio a ON po.idAnio = a.id
+GROUP by p.nombre , pr.nombre, a.numero
+
+
+ejer12
+SELECT p.nombre Pais,pr.nombre Provincia, COUNT(po.idDepartamento) Poblacion , a.numero Anio FROM pais p INNER JOIN provincia pr ON p.id=pr.idPais INNER JOIN departamento d ON pr.id=d.idProvincia INNER JOIN poblacion po ON d.id=po.idDepartamento INNER JOIN anio a ON po.idAnio = a.id GROUP by p.nombre , pr.nombre, a.numero
+
+ejer13
+SELECT left(p.nombre, 3) Pais, left(pr.nombre,3) Provincia, d.nombre Departamento, a.numero Anio, (po.valor) poblacion, s.valor Superficie FROM pais p inner join provincia pr on p.id= pr.idpais inner join departamento d on pr.id= d.idprovincia inner join poblacion po on d.id= po.idDepartamento inner join anio a on po.idAnio= a.id inner join superficie s on d.id= s.idDepartamento where po.valor > 450000 and a.numero=2010 ORDER by po.valor DESC 
